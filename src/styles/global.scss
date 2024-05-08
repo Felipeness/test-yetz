@@ -1,0 +1,41 @@
+@import "./variables.scss";
+@import "./responsive.scss";
+
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 100dvw;
+  height: 100dvh;
+}
+
+html,
+body {
+  overflow: hidden;
+  background: url('../../src/assets/star-wars-bg.svg') no-repeat center center;
+  background-size: cover;
+  font-family: "montserrat";
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.main {
+  font-family: "Inter", sans-serif;
+  background-color: $main-bg;
+  color: $main-color;
+
+  @include sm {
+    width: 120%;
+  }
+}
