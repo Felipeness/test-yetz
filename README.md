@@ -1,30 +1,59 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# 🌌 PlanetInfo Explorer
 
-Currently, two official plugins are available:
+Explore os detalhes dos planetas do universo de Star Wars com o **PlanetInfo Explorer**! Este projeto permite aos usuários visualizar informações detalhadas sobre diferentes planetas, como clima, terreno, população e mais.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Começando
 
-## Expanding the ESLint configuration
+Estas instruções fornecerão uma cópia do projeto instalada e funcionando em sua máquina local para fins de desenvolvimento e teste. Veja as notas sobre como implantar o projeto em um sistema ao vivo.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### 📋 Pré-requisitos
 
-- Configure the top-level `parserOptions` property like this:
+O que você precisa para instalar o software e como instalá-lo:
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+```bash
+node.js
+pnpm
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### 🔧 Instalação
+
+Um passo a passo que informa o que você deve executar para ter um ambiente de desenvolvimento em execução:
+
+Clone o repositório:
+
+```bash
+git clone https://github.com/Felipeness/test-yetz.git
+```
+
+Instale as dependências do projeto:
+
+```bash
+cd seuprojeto
+pnpm install
+```
+
+Execute o projeto:
+
+```bash
+pnpm run dev
+```
+
+A aplicação estará disponível em `http://localhost:porta que o vite escolher`.
+
+## 🛠️ Construído com
+
+- [React](https://reactjs.org/) - A biblioteca web usada
+- [Vite](https://vitejs.dev/) - Empacotador e servidor de desenvolvimento
+- [Zustand](https://github.com/pmndrs/zustand) - Gerenciamento de estado
+- [TypeScript](https://www.typescriptlang.org/) - Superset de JavaScript tipado
+- [React Router](https://reactrouter.com/) - Roteamento para React
+
+## 📄 Licença
+
+Este projeto está sob a Licença (de Ness) - veja o arquivo [LICENSE.md](LICENSE.md) para detalhes.
+
+## ✒️ Autores
+
+- **Felipe Ness** - _Trabalho Inicial_ - [GitHub](https://github.com/Felipeness)
