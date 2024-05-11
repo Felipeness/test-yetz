@@ -1,7 +1,7 @@
 import React from "react";
 import "./searchBar.scss";
 import { FaSearch } from "react-icons/fa";
-import useSearchStore from "../../hooks/useSearchStore";
+import useSearchStore from "../../store/useSearchStore";
 
 interface SearchBarProps {
   onSearch: (query: { type: "name" | "population"; value: string }) => void;

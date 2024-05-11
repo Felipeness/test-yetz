@@ -1,17 +1,17 @@
+import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+import { SearchParams } from "../types/searchParams";
 
 const usePlanetSearch = () => {
   const navigate = useNavigate();
 
-  const handleSearch = ({
-    type,
-    value,
-  }: {
-    type: "name" | "population";
-    value: string;
-  }) => {
-    navigate("/planet-info", { state: { type, value } });
-  };
+  const handleSearch = useCallback(
+    ({ type, value }: SearchParams) => {
+      navigate("/planet-info", { state: { type, value } });
+    },
+    [navigate]
+  );
+
   return handleSearch;
 };
 
