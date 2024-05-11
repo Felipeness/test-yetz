@@ -4,3 +4,4 @@ export interface PlanetState {
   addPlanet: (planet: string) => void;
   removePlanet: (planet: string) => void;
 }
+

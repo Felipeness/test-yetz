@@ -17,7 +17,6 @@ const SearchBarPage = () => {
           <img src={SubBackGround} alt="" />
           <img className="space" src={SpaceShip} alt="Nave" />
         </div>
-
         <SearchBar onSearch={handleSearch} />
       </div>
     </div>
