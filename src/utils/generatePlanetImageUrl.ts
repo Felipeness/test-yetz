@@ -1,4 +1,4 @@
-import { API_URLS, PLANET_IMAGE_MAP } from "../api/config";
+import { API_URLS, PLANET_IMAGE_MAP } from "../api/api";
 
 export function generatePlanetImageUrl(planetName: string): string {
   const normalizedPlanetName = planetName.toLowerCase().replace(/\s/g, "_");

@@ -1,6 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { Planet } from "../types/planet";
-import { API_URLS } from "./config";
+import { API_URLS } from "./api";
 import { generatePlanetImageUrl } from "../utils/generatePlanetImageUrl";
 import { parsePlanetData } from "../utils/parsePlanetData";
 
