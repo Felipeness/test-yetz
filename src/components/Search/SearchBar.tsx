@@ -23,7 +23,20 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
       setCompletion("");
       return;
     }
-    const suggestions = ["Naboo", "Nar Shaddaa", "Nal Hutta"];
+    const suggestions = [
+      "Tatooine",
+      "Naboo",
+      "Mustafar",
+      "Kashyyyk",
+      "Hoth",
+      "Endor",
+      "Dagobah",
+      "Coruscant",
+      "Bespin",
+      "Naboo",
+      "Nar Shaddaa",
+      "Nal Hutta",
+    ];
     const match = suggestions.find((s) =>
       s.toLowerCase().startsWith(userInput.toLowerCase())
     );
