@@ -79,20 +79,23 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    margin-bottom: 5px;
   }
 
   .input-backdrop {
     position: relative;
+    width: 100%;
+    max-width: 301px;
+    overflow: hidden;
     color: rgb(96, 94, 92);
     pointer-events: none;
-    bottom: 76px;
-    right: 118px;
+    bottom: 33px;
+    padding-left: 7px;
+    font-size: 12px;
   }
 
   input[type="text"] {
   width: 100%;
   padding: 7px;
-  font-size: 18px;
+  font-size: 13.5px;
   }
 }

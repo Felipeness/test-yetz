@@ -59,13 +59,13 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         onKeyDown={(e) => e.key === "Tab" && fillAutocomplete()}
         className={error ? "input-error" : ""}
       />
+      <div className="autocomplete">
+        <span className="input-backdrop">{completion}</span>
+      </div>
       <button onClick={handleSearch} disabled={!input || !!error}>
         <FaSearch />
         Search
       </button>
-      <div className="autocomplete">
-        <span className="input-backdrop">{completion}</span>
-      </div>
       {error && <div className="error">{error}</div>}
     </div>
   );
