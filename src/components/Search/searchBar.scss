@@ -43,7 +43,7 @@
     background-color: $button-bg;
     color: $primary-font;
     font-size: 16px;
-    font-weight: 400;
+
 
 
 
@@ -72,5 +72,27 @@
     color: red;
     font-size: 0.8rem;
     margin-top: 5px;
+  }
+
+  .autocomplete{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-bottom: 5px;
+  }
+
+  .input-backdrop {
+    position: relative;
+    color: rgb(96, 94, 92);
+    pointer-events: none;
+    bottom: 76px;
+    right: 118px;
+  }
+
+  input[type="text"] {
+  width: 100%;
+  padding: 7px;
+  font-size: 18px;
   }
 }
