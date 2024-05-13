@@ -1,4 +1,4 @@
-import React from "react";
+import { useState, useEffect } from "react";
 
 import { Planet } from "../../types/planet";
 
@@ -14,13 +14,30 @@ interface PlanetInfoProps {
 }
 
 const PlanetInfo: React.FC<PlanetInfoProps> = ({ planet }) => {
-  const formatUrlPath = (url: string) => {
-    const parts = url.split("/").filter((part: unknown) => part);
-    let result = parts.slice(-2).join(" ");
+  const [isEditing, setIsEditing] = useState(false);
+  const [editableName, setEditableName] = useState("");
 
-    result = result.replace(/(\d+)$/, " $1 ,");
+  useEffect(() => {
+    if (planet) {
+      const storedName = sessionStorage.getItem(`planetName_${planet.name}`);
+      sessionStorage.removeItem(`planetName_${planet.name}`);
+      setEditableName(storedName || planet.name);
+    }
+  }, [planet]);
 
-    return result;
+  const handleDoubleClick = () => {
+    setIsEditing(true);
+  };
+
+  const handleBlur = () => {
+    setIsEditing(false);
+    if (planet) {
+      sessionStorage.setItem(`planetName_${planet.name}`, editableName);
+    }
+  };
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setEditableName(e.target.value);
   };
 
   return (
@@ -29,9 +46,20 @@ const PlanetInfo: React.FC<PlanetInfoProps> = ({ planet }) => {
         <div className="planet-info-all">
           <div className="planet-info">
             <div className="planet-text-img">
-              <img src={planet.imageUrl} alt={`Imagem de ${planet.name}`} />
+              <img src={planet.imageUrl} alt={`Imagem de ${editableName}`} />
               <p>
-                Planet: <span> {planet.name} </span>
+                Planet:{" "}
+                {isEditing ? (
+                  <input
+                    type="text"
+                    value={editableName}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    autoFocus
+                  />
+                ) : (
+                  <span onDoubleClick={handleDoubleClick}>{editableName}</span>
+                )}
               </p>
             </div>
             <div className="sub-info">
@@ -54,7 +82,11 @@ const PlanetInfo: React.FC<PlanetInfoProps> = ({ planet }) => {
             <strong>Residents:</strong>
             <ul>
               {planet.residents.map((resident, index) => (
-                <li key={index}>{formatUrlPath(resident)}</li>
+                <li key={index}>
+                  {" "}
+                  {resident}
+                  {index < planet.residents.length - 1 ? ", " : ""}
+                </li>
               ))}
             </ul>
           </div>
@@ -63,7 +95,11 @@ const PlanetInfo: React.FC<PlanetInfoProps> = ({ planet }) => {
             <strong>Films:</strong>
             <ul>
               {planet.films.map((film, index) => (
-                <li key={index}>{formatUrlPath(film)}</li>
+                <li key={index}>
+                  {" "}
+                  {film}
+                  {index < planet.films.length - 1 ? ", " : ""}
+                </li>
               ))}
             </ul>
           </div>

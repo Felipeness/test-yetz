@@ -59,6 +59,14 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch({ type, value: input });
   };
 
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === "Enter") {
+      handleSearch();
+    } else if (e.key === "Tab") {
+      fillAutocomplete();
+    }
+  };
+
   return (
     <div className="searchBar">
       <div className="title">
@@ -69,7 +77,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         placeholder="Digite o nome do planeta ou população..."
         value={input}
         onChange={handleInputChange}
-        onKeyDown={(e) => e.key === "Tab" && fillAutocomplete()}
+        onKeyDown={handleKeyDown}
         className={error ? "input-error" : ""}
       />
       <div className="autocomplete">
