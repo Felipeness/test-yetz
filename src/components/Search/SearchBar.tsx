@@ -59,8 +59,9 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
     onSearch({ type, value: input });
   };
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+  const handleKeyDown = async (e: React.KeyboardEvent<HTMLInputElement>) => {
     if (e.key === "Enter") {
+      await new Promise((resolve) => setTimeout(resolve, 0));
       handleSearch();
     } else if (e.key === "Tab") {
       fillAutocomplete();
