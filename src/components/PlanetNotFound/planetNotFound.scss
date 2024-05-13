@@ -1,0 +1,43 @@
+@import '../../styles/variables.scss';
+
+.planet-not-found {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 20px;
+  background-color: $soft-bg;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 800px;
+
+  &__title {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  &__message {
+    color: $primary-font;
+    font-size: 24px;
+    text-align: center;
+  }
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-right: 100px;
+
+
+    &:hover {
+      background-color: darken(red, 10%);
+    }
+  }
+}
